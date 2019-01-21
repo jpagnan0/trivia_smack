@@ -1,0 +1,22 @@
+{
+  "name": "trivia_smack",
+  "version": "0.0.0",
+  "description": "trivia app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jpagnan0/trivia_smack.git"
+  },
+  "author": "@jpagnano, @SmartAxx36",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jpagnan0/trivia_smack/issues"
+  },
+  "homepage": "https://github.com/jpagnan0/trivia_smack#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1"
+  }
+}
