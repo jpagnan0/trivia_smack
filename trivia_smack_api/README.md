@@ -1,24 +1,18 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Categories
+* Cars
+* Stupid Answers
+* Sports
+* Science
+* 3 Letter Words
+* Hodgepodge
+* Common Bonds
+* Technology
+* Colleges & Universities
+* Body Language
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Goals
+- [ ] Set up all relationships
+- [ ] Seed DB with 10 categories above
+- [ ] Be able to fetch relevant data from created end points
