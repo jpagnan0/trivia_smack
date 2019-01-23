@@ -1,4 +1,4 @@
-/*
+// /*
 const CAT_IDS = ['16', '136', '42', '25', '105', '51', '227', '508', '348', '672', '897'];
 const BASE_URL = `http://jservice.io/api/category?id=`;
 
@@ -98,4 +98,4 @@ class CategoryComponent {
 let body = document.querySelector('body');
 categoryHTML = mapClues().join(" ");
 body.innerHTML = categoryHTML;
-*/
+// */
