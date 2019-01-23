@@ -2,7 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Trivia Smack</title>
+    <link rel="stylesheet" href="/css/bulma/css/bulma.css">
+    <script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="lib/adapter.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="lib/clue.js" charset="utf-8"></script>
@@ -10,12 +13,18 @@
     <script src="index.js" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Welcome To Trivia SMACK &copy </h1>
-    <div id="category">
-
-    </div>
-    <div id="clue">
-
-    </div>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Welcome To Trivia SMACK &trade;</h1>
+        <p class="subtitle">.... something go</p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Categories</h1>
+        <div class="columns is-multiline" id="category"></div>
+        
+    </section>
+    <div class="box" id="clue"></div>
   </body>
 </html>
