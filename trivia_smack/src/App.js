@@ -38,4 +38,5 @@ class App {
     Category.all.forEach(category => (categoryContainer.innerHTML += category.renderCategories())
     );
   }
+  
 }
