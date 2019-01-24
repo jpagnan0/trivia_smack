@@ -10,7 +10,7 @@ class Clue {
 
 	renderClue() {
 		return `
-    <div id=${this.id} class="column is-12-tablet is-12-desktop is-12-widescreen">
+    <div id=${this.id} class="column is-12-tablet is-8-desktop is-offset-4-desktop is-8-widescreen is-offset-2-widescreen">
 
       <div class="card" style:"height: 100%;" >
 
@@ -27,18 +27,12 @@ class Clue {
                 </div>
 
                 <div class="control">
-                  <button data-id=${this.id} type="submit" data-action="submit" class="button is-primary is-normal"> Check It? </button>
+                  <button data-id=${this.id} type="submit" data-action="submit" class="button is-primary is-large"> Check It? </button>
                 </div>
             	</div>
 
           </div>
         </div>
-
-				<footer class="card-footer">
-					<p class="card-footer-item is-paddingless is-marginless">
-						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-submit is-normal"><i class="fas fa-check-circle"></i></button>
-					</p>
-				</footer>
 
       </div>
 
