@@ -41,20 +41,41 @@ class Category {
 			Category.all.push(this)
 	}
 
+	// `
+	// 		<div id=${this.id}>
+	// 			<h1>${this.title}</h1>
+	// 			<p>${this.clues_count} questions to be answered!</p>
+	//
+	// 		</div>
+	// 		`
 
 
+	// disable submit until input is != ""
 	renderCategories() {
-    return `
-				<div id=${this.id}>
-					<h1>${this.title}</h1>
-					<p>${this.clues_count} questions to be answered!</p>
-
-				</div>
-				`
+		return `
+					<div id=${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
+						<div class="card">
+						  <div class="card-content">
+						    <p class="title">${this.title}</p>
+						    <p class="subtitle">${this.clues_count} questions to be answered!</p>
+						  </div>
+						  <footer class="card-footer is-marginless">
+						    <p class="card-footer-item is-paddingless is-marginless">
+									<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-info is-normal">Play!</button>
+								</p>
+						    <p class="card-footer-item">
+									<span class="icon is-medium">
+								 		<i class="fas fa-heart" aria-hidden="true"></i>
+							 		</span>
+						    </p>
+						  </footer>
+						</div>
+					</div>
+				</div>`
 	}
-  static findById(id) {
-    return this.all.find(note => note.id === id)
-  }
+	static findById(id) {
+		return this.all.find(note => note.id === id)
+	}
 }
 Category.all = [];
 
