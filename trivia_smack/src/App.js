@@ -20,7 +20,7 @@ class App {
     const clueContainer = document.querySelector('#clue')
     // Clue.all.forEach(
       // clue => (
-        clueContainer.innerHTML += clue.renderClue()
+        clueContainer.innerHTML = clue.renderClue()
       // )
     // );
   }
@@ -38,5 +38,4 @@ class App {
     Category.all.forEach(category => (categoryContainer.innerHTML += category.renderCategories())
     );
   }
-  
 }

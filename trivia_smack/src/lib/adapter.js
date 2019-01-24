@@ -21,7 +21,7 @@ class Adapter {
       return this.get(`${this.categoryUrl}${pgNum}`)
     })
   }
-  
+
   get(url) {
     return fetch(url).then(res => res.json());
   }
