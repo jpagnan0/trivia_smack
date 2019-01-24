@@ -22,8 +22,34 @@
     </section>
     <section class="section is-paddingless is-marginless">
       <div class="container">
-        <h1 id='title' class="title has-text-centered">Categories</h1>
-        <div class="columns is-multiline" id="category"></div>
+        <h1 id='title' class="title has-text-centered">Login</h1>
+
+        <div class="columns is-multiline" id="login">
+          <div id='user' class="column is-12-tablet is-8-desktop is-offset-4-desktop is-8-widescreen is-offset-2-widescreen">
+
+            <div class="card" style:"height: 100%;" >
+
+              <div class="card-content">
+                <div class="content">
+
+                    <div class="field is-grouped">
+                      <div class="control is-expanded">
+                        <input data-login="login" class="input is-large" type="text" placeholder="Username..." value="">
+                      </div>
+
+                      <div class="control">
+                        <button type="submit" data-action="login" class="button is-primary is-large"> Log-in </button>
+                      </div>
+                  	</div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="columns is-multiline is-invisible" id="category"></div>
         <div class="columns is-multiline is-invisible" id="clue"></div>
     </section>
 
