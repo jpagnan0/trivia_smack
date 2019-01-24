@@ -31,7 +31,6 @@ class App {
     // console.log(e.target);
     if (e.target.dataset.action === 'submit') {
       // console.log(e.target);
-      // const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
       const foundClue = Clue.all.find(clue => clue.id === parseInt(e.target.dataset.id))
       const inputField = document.querySelector('input')
       // console.log(foundCategory);
@@ -48,7 +47,11 @@ class App {
       this.createClues(foundCategory.clues)
     }
     else if (e.target.dataset.action === 'incorrect') {
-      console.log(e.target);
+      // console.log(e.target);
+      document.querySelector('#clue').innerHTML = ''
+      document.querySelector('#title').innerText = `Categories`
+      // document.querySelector('#clue').classList.remove('is-invisible')
+      this.addCategories()
     }
   }
 
@@ -77,7 +80,6 @@ class App {
     const categoryContainer = document.querySelector('#category')
     categoryContainer.innerHTML = '';
     // let category = Category.all[Math.floor(Math.random()*Category.all.length)]
-    Category.all.forEach(category => (categoryContainer.innerHTML += category.renderCategories())
-    );
+    Category.all.forEach(category => (categoryContainer.innerHTML += category.renderCategories()));
   }
 }
