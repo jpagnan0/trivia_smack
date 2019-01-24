@@ -3,7 +3,7 @@ class Clue {
 		this.id = data.id;
 		this.question = data.question;
 		this.answer = data.answer;
-		this.categoryId = data.category.id
+		// this.categoryId = data.category.id
 		Clue.all.push(this);
 	}
 

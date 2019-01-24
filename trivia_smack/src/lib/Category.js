@@ -61,7 +61,7 @@ class Category {
 						  </div>
 						  <footer class="card-footer is-marginless">
 						    <p class="card-footer-item is-paddingless is-marginless">
-									<button style="border-radius: none; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-info is-normal">Play!</button>
+									<button id='play-button' style="border-radius: none; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-info is-normal">Play!</button>
 								</p>
 						    <p class="card-footer-item">
 									<span class="icon is-medium">
