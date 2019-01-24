@@ -31,13 +31,24 @@ class App {
     // console.log(e.target);
     if (e.target.dataset.action === 'submit') {
       // console.log(e.target);
-      const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
+      // const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
       const foundClue = Clue.all.find(clue => clue.id === parseInt(e.target.dataset.id))
       const inputField = document.querySelector('input')
       // console.log(foundCategory);
       // console.log(foundClue);
-      // console.log(inputField.value);
-      
+      console.log(inputField.value);
+      const clueContainer = document.querySelector('#clue')
+      clueContainer.innerHTML = foundClue.renderAnswer(inputField)
+    }
+    else if (e.target.dataset.action === 'correct') {
+      console.log(e.target);
+      // increment score for a user
+      const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
+      // console.log(foundCategory);
+      this.createClues(foundCategory.clues)
+    }
+    else if (e.target.dataset.action === 'incorrect') {
+      console.log(e.target);
     }
   }
 
@@ -52,11 +63,8 @@ class App {
     document.querySelector('#clue').innerHTML = '';
     let clue = Clue.all[Math.floor(Math.random()*Clue.all.length)]
     const clueContainer = document.querySelector('#clue')
-    // Clue.all.forEach(
-      // clue => (
+    // console.log(clue);
         clueContainer.innerHTML = clue.renderClue()
-      // )
-    // );
   }
   createCategory(categories) {
     categories.forEach(category => {

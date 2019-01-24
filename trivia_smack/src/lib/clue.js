@@ -41,8 +41,7 @@ class Clue {
 	}
 
 	renderAnswer(inputField) {
-		return
-		`
+		return `
 		<div id=${this.id} class="column is-12-tablet is-8-desktop is-offset-4-desktop is-8-widescreen is-offset-2-widescreen">
 
 			<div class="card" style:"height: 100%;">
@@ -59,10 +58,10 @@ class Clue {
 
 				<footer class="card-footer">
 					<p class="card-footer-item is-paddingless is-marginless">
-						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-submit is-large"><i class="fas fa-check-circle"></i></button>
+						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-category-id=${this.categoryId} data-action="correct" class="is-marginless button is-fullwidth is-outlined is-submit is-large"><i class="fas fa-check-circle"></i></button>
 					</p>
 					<p class="card-footer-item is-paddingless is-marginless">
-						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-danger is-large"><i class="fas fa-times-circle"></i></button>
+						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="incorrect" class="is-marginless button is-fullwidth is-outlined is-danger is-large"><i class="fas fa-times-circle"></i></button>
 					</p>
 				</footer>
 
