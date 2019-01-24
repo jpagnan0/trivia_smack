@@ -39,6 +39,38 @@ class Clue {
     </div>
     `
 	}
+
+	renderAnswer(inputField) {
+		return
+		`
+		<div id=${this.id} class="column is-12-tablet is-8-desktop is-offset-4-desktop is-8-widescreen is-offset-2-widescreen">
+
+			<div class="card" style:"height: 100%;">
+
+				<div class="card-header has-text-centered">
+					<p class="title card-header-title">Correct Answer: <strong>${this.answer}</strong></p>
+				</div>
+
+				<div class="card-content">
+					<div class="content">
+						<p class="subtitle">Your Answer: <span class="is-italic">${inputField.value}</span></p>
+					</div>
+				</div>
+
+				<footer class="card-footer">
+					<p class="card-footer-item is-paddingless is-marginless">
+						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-submit is-large"><i class="fas fa-check-circle"></i></button>
+					</p>
+					<p class="card-footer-item is-paddingless is-marginless">
+						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-danger is-large"><i class="fas fa-times-circle"></i></button>
+					</p>
+				</footer>
+
+			</div>
+
+		</div>
+		`
+	}
 	static findById(id) {
 		return this.all.find(note => note.id === id)
 	}
