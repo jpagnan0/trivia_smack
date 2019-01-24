@@ -10,7 +10,7 @@ class Clue {
 
 	renderClue() {
 		return `
-    <div id=${this.id} class="column is-12-tablet is-6-desktop is-5-widescreen">
+    <div id=${this.id} class="column is-12-tablet is-12-desktop is-12-widescreen">
 
       <div class="card">
 
@@ -20,11 +20,10 @@ class Clue {
 
         <div class="card-content">
           <div class="content">
-            <p class="title">${this.clues_count} questions to be answered!</p>
 
               <div class="field is-grouped">
                 <div class="control is-expanded">
-                  <input class="input is-normal" type="text" placeholder="Answer Me BABY" value="">
+                  <input data-answer="answer-${this.id}" class="input is-large" type="text" placeholder="Answer Me BABY" value="">
                 </div>
 
                 <div class="control">
@@ -36,11 +35,8 @@ class Clue {
         </div>
 
 				<footer class="card-footer">
-					<p class="card-footer-item"><span><a href="#">Play!</a></span></p>
-					<p class="card-footer-item">
-						<span class="icon is-medium">
-							<i class="fas fa-heart" aria-hidden="true"></i>
-						</span>
+					<p class="card-footer-item is-paddingless is-marginless">
+						<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-submit is-normal"><i class="fas fa-check-circle"></i></button>
 					</p>
 				</footer>
 
@@ -55,15 +51,16 @@ class Clue {
 }
 Clue.all = []
 
+/************************************************************
 
-`
-      <div id=${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
-        <div class="card">
-          <div class="card-content">
-            <p class="title">${this.title}</p>
-            <p class="subtitle">${this.clues_count} questions to be answered!</p>
-          </div>
 
-        </div>
-      </div>
-    </div>`
+ ********** Back of card bottom ✅ and ⨂ buttons ************
+	<footer class="card-footer">
+		<p class="card-footer-item is-paddingless is-marginless">
+			<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-submit is-normal"><i class="fas fa-check-circle"></i></button>
+		</p>
+		<p class="card-footer-item is-paddingless is-marginless">
+			<button style="border-radius: 0; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-danger is-normal"><i class="fas fa-times-circle"></i></button>
+		</p>
+	</footer>
+************************************************************/
