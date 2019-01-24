@@ -48,16 +48,21 @@ class Category {
 	//
 	// 		</div>
 	// 		`
+
+
+	// disable submit until input is != ""
 	renderCategories() {
 		return `
-					<div id=${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
+					<div id=card-${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
 						<div class="card">
 						  <div class="card-content">
 						    <p class="title">${this.title}</p>
 						    <p class="subtitle">${this.clues_count} questions to be answered!</p>
 						  </div>
-						  <footer class="card-footer">
-						    <p class="card-footer-item"><span><a href="#">Play!</a></span></p>
+						  <footer class="card-footer is-marginless">
+						    <p class="card-footer-item is-paddingless is-marginless">
+									<button id='play-button' style="border-radius: none; height: 100%;" data-id=${this.id} data-action="play" class="is-marginless button is-fullwidth is-outlined is-info is-normal">Play!</button>
+								</p>
 						    <p class="card-footer-item">
 									<span class="icon is-medium">
 								 		<i class="fas fa-heart" aria-hidden="true"></i>
