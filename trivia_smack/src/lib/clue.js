@@ -23,7 +23,7 @@ class Clue {
 
               <div class="field is-grouped">
                 <div class="control is-expanded">
-                  <input data-answer="answer-${this.id}" class="input is-large" type="text" placeholder="Answer Me BABY" value="">
+                  <input data-answer="answer" class="input is-large" type="text" placeholder="Answer Me BABY" value="">
                 </div>
 
                 <div class="control">
