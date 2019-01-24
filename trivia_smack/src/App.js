@@ -10,6 +10,7 @@ class App {
 
   attachEventListeners() {
     document.querySelector('#category').addEventListener('click', this.handleCategoryClick);
+    document.querySelector('#clue').addEventListener('submit', this.handleClueSubmit)
   }
 
   handleCategoryClick(e) {
@@ -19,6 +20,7 @@ class App {
       const clickedCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.id))
       console.log(clickedCategory);
       document.querySelector('#category').innerHTML = ''
+      document.querySelector('#title').innerText = `Category: ${clickedCategory.title}`
       document.querySelector('#clue').classList.remove('is-invisible')
       this.createClues(clickedCategory.clues)
     }
