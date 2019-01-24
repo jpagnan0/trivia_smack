@@ -12,7 +12,7 @@ class Clue {
 		return `
     <div id=${this.id} class="column is-12-tablet is-12-desktop is-12-widescreen">
 
-      <div class="card">
+      <div class="card" style:"height: 100%;" >
 
         <div class="card-header has-text-centered">
           <p class="title card-header-title">${this.question}</p>
