@@ -3,7 +3,7 @@ class Clue {
 		this.id = data.id;
 		this.question = data.question;
 		this.answer = data.answer;
-		// this.categoryId = data.category.id
+		this.categoryId = data.category_id
 		Clue.all.push(this);
 	}
 
@@ -27,7 +27,7 @@ class Clue {
                 </div>
 
                 <div class="control">
-                  <button data-id=${this.id} type="submit" data-action="submit" class="button is-primary is-large"> Check It? </button>
+                  <button data-id=${this.id} data-category-id=${this.categoryId} type="submit" data-action="submit" class="button is-primary is-large"> Check It? </button>
                 </div>
             	</div>
 
