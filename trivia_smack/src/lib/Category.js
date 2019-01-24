@@ -53,7 +53,7 @@ class Category {
 	// disable submit until input is != ""
 	renderCategories() {
 		return `
-					<div id=${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
+					<div id=card-${this.id} class="column is-12-tablet is-6-desktop is-3-widescreen">
 						<div class="card">
 						  <div class="card-content">
 						    <p class="title">${this.title}</p>
