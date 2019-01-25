@@ -7,7 +7,7 @@ class App {
     this.handleClueSubmit = this.handleClueSubmit.bind(this);
     this.handleSignIn = this.handleSignIn.bind(this);
     this.createUsers = this.createUsers.bind(this);
-    this.createClues = this.createClues.bind(this);
+    // this.createClues = this.createClues.bind(this);
     this.addClue = this.addClue.bind(this);
   }
 
@@ -29,7 +29,7 @@ class App {
         })
       document.querySelector('#signIn').innerHTML = ''
       document.querySelector('#category').classList.remove('is-invisible')
-      this.createCategory(categories)
+      this.addCategories()
     }
   }
 
@@ -42,7 +42,7 @@ class App {
       document.querySelector('#category').innerHTML = ''
       document.querySelector('#title').innerText = `Category: ${clickedCategory.title}`
       document.querySelector('#clue').classList.remove('is-invisible')
-      this.createClues(clickedCategory.clues)
+      this.addClue(clickedCategory)
     }
   }
 
@@ -65,7 +65,7 @@ class App {
       const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
       // console.log(foundCategory);
       counter++
-      this.createClues(foundCategory.clues)
+      this.addClue(foundCategory)
       console.log(counter);
     }
     else if (e.target.dataset.action === 'incorrect') {
@@ -86,26 +86,30 @@ class App {
     })
   }
 
-  createClues(clues) {
-    clues.forEach(clue => {
-      new Clue(clue);
-    });
-    this.addClue();
-  }
+  // createClues(categories) {
+  //   // categories.forEach(category => {
+  //   //   category.clues.forEach(clue => {
+  //   //     new Clue(clue)
+  //   //   })
+  //   // });
+  //   this.addClue();
+  // }
 
-  addClue() {
+  addClue(category) {
     document.querySelector('#clue').innerHTML = '';
-    let clue = Clue.all[Math.floor(Math.random()*Clue.all.length)]
+    let clues = Clue.all.filter( clue => clue.categoryId === category.id)
+    // console.log(clues)
+    let clue = clues[Math.floor(Math.random()*clues.length)]
     const clueContainer = document.querySelector('#clue')
     // console.log(clue);
         clueContainer.innerHTML = clue.renderClue()
   }
-  createCategory(categories) {
-    // categories.forEach(category => {
-    //   new Category(category);
-    // });
-    this.addCategories();
-  }
+  // createCategory(categories) {
+  //   // categories.forEach(category => {
+  //   //   new Category(category);
+  //   // });
+  //   this.addCategories();
+  // }
 
   addCategories() {
     const categoryContainer = document.querySelector('#category')
