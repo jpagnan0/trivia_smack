@@ -26,10 +26,10 @@ class App {
       this.adapter.postUser({'user_name': username}).then(createdUser => {
         // console.log(createdUser)
         new SignIn(createdUser)
-        })
       document.querySelector('#signIn').innerHTML = ''
       document.querySelector('#category').classList.remove('is-invisible')
-      this.addCategories()
+      this.addCategories(createdUser)
+      })
     }
   }
 
@@ -74,7 +74,9 @@ class App {
       document.querySelector('#title').innerText = `Categories`
       // document.querySelector('#clue').classList.remove('is-invisible')
       console.log(counter);
-      this.addCategories()
+      const user = SignIn.all.pop()
+      console.log(user);
+      this.addCategories(user)
       counter = 0
       console.log(counter);
     }
@@ -111,10 +113,23 @@ class App {
   //   this.addCategories();
   // }
 
-  addCategories() {
+  addCategories(user) {
+    // console.log(user);
     const categoryContainer = document.querySelector('#category')
     categoryContainer.innerHTML = '';
     document.querySelector('#title').innerText = `Categories`
+    let gameStats = document.createElement('div');
+    gameStats.setAttribute("class", "container");
+    gameStats.setAttribute("data-id", `${user.id}`)
+    let statString = `<div class="level">
+           <div class="level-left">
+    	       <p class="level-item is-size-5"> User: <span class="has-text-weight-light is-italic" id="user-name">${user.user_name}</span></p><br>
+    	       <!--<p class="level-item is-size-5"> Score: <span class="has-text-weight-light is-italic" id="score">See what you can get..</span></p>-->
+           </div>
+          </div>`;
+    gameStats.innerHTML = statString;
+    let parent = document.querySelector('#title');
+    parent.insertBefore(gameStats, parent.childNodes[1])
     // let category = Category.all[Math.floor(Math.random()*Category.all.length)]
     Category.all.forEach(category => (categoryContainer.innerHTML += category.renderCategories()));
   }

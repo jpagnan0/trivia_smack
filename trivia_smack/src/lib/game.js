@@ -22,7 +22,8 @@ let statString = `<div class="level">
       </div>`;
 gameStats.innerHTML = statString;
 let parent = document.querySelector('#title');
-parent.insertBefore(gameStats, parent.childNodes[1])
+// parent.insertBefore(gameStats, parent.childNodes[1])
+// console.log(parent);
 
 //pass in user_id get back user element
 function setId(uid) {
