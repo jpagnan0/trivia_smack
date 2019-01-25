@@ -1,7 +1,7 @@
 class SignIn {
 	constructor(data) {
 		this.id = data.id;
-		this.userName = data.user_name;
+		this.user_name = data.user_name;
 		SignIn.all.push(this);
 	}
   static create({ name }) {
