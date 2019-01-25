@@ -1,2 +1,10 @@
 @charset "utf-8";
-@import '../../node_modules/bulma/bulma.sass';
+@import "../bulma/sass/utilities/initial-variables.sass";
+
+$section-padding: 2rem 1rem;
+
+@import '../bulma/bulma.sass';
+
+#clue div.card {
+  padding: 4em;
+}
