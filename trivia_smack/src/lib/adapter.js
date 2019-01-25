@@ -31,6 +31,10 @@ class Adapter {
   fetchGames() {
       return this.get(`${this.baseUrl}games`)
   }
+  postGames(body) {
+    // debugger
+    return this.post(`${this.baseUrl}games`, body);
+  }
 
   get(url) {
     return fetch(url).then(res => res.json());

@@ -1,10 +1,11 @@
+let counter = 0
 class App {
   constructor() {
     this.adapter = new Adapter();
 
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.handleClueSubmit = this.handleClueSubmit.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
+    this.handleSignIn = this.handleSignIn.bind(this);
     this.createUsers = this.createUsers.bind(this);
     this.createClues = this.createClues.bind(this);
     this.addClue = this.addClue.bind(this);
@@ -13,10 +14,10 @@ class App {
   attachEventListeners() {
     document.querySelector('#category').addEventListener('click', this.handleCategoryClick);
     document.querySelector('#clue').addEventListener('click', this.handleClueSubmit)
-    document.querySelector('#login').addEventListener('click', this.handleLogin)
+    document.querySelector('#signIn').addEventListener('click', this.handleSignIn)
   }
-  handleLogin(e) {
-    if (e.target.dataset.action === 'login') {
+  handleSignIn(e) {
+    if (e.target.dataset.action === 'signIn') {
       // console.log(e.target);
       const username = document.querySelector('input').value;
       // console.log(username);
@@ -24,9 +25,9 @@ class App {
       // console.log(categories);
       this.adapter.postUser({'user_name': username}).then(createdUser => {
         // console.log(createdUser)
-        new Login(createdUser)
+        new SignIn(createdUser)
         })
-      document.querySelector('#login').innerHTML = ''
+      document.querySelector('#signIn').innerHTML = ''
       document.querySelector('#category').classList.remove('is-invisible')
       this.createCategory(categories)
     }
@@ -63,20 +64,25 @@ class App {
       // increment score for a user
       const foundCategory = Category.all.find(category => category.id === parseInt(e.target.dataset.categoryId))
       // console.log(foundCategory);
+      counter++
       this.createClues(foundCategory.clues)
+      console.log(counter);
     }
     else if (e.target.dataset.action === 'incorrect') {
       // console.log(e.target);
       document.querySelector('#clue').innerHTML = ''
       document.querySelector('#title').innerText = `Categories`
       // document.querySelector('#clue').classList.remove('is-invisible')
+      console.log(counter);
       this.addCategories()
+      counter = 0
+      console.log(counter);
     }
   }
 
   createUsers(users) {
     users.forEach(user => {
-      new Login(user)
+      new SignIn(user)
     })
   }
 

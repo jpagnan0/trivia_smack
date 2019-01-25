@@ -1,8 +1,8 @@
-class Login {
+class SignIn {
 	constructor(data) {
 		this.id = data.id;
 		this.userName = data.user_name;
-		Login.all.push(this);
+		SignIn.all.push(this);
 	}
   static create({ name }) {
     this.userName = name;
@@ -11,4 +11,4 @@ class Login {
 	// 	return this.all.find(note => note.id === id)
 	// }
 }
-Login.all = []
+SignIn.all = []
