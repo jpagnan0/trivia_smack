@@ -35,11 +35,11 @@ class Adapter {
   get(url) {
     return fetch(url).then(res => res.json());
   }
-  post(url, body) {
+  post(url, stuff) {
     return fetch(url, {
       method: 'POST',
       headers: this.headers,
-      body: JSON.stringify(body),
+      body: JSON.stringify(stuff),
     }).then(res => res.json())
   }
 

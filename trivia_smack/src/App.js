@@ -5,6 +5,7 @@ class App {
     this.handleCategoryClick = this.handleCategoryClick.bind(this);
     this.handleClueSubmit = this.handleClueSubmit.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
+    this.createUsers = this.createUsers.bind(this);
     this.createClues = this.createClues.bind(this);
     this.addClue = this.addClue.bind(this);
   }
@@ -15,14 +16,16 @@ class App {
     document.querySelector('#login').addEventListener('click', this.handleLogin)
   }
   handleLogin(e) {
-    // console.log(e.target);
     if (e.target.dataset.action === 'login') {
       // console.log(e.target);
       const username = document.querySelector('input').value;
       // console.log(username);
       const categories = Category.all
       // console.log(categories);
-      this.adapter.postUser({'user_name': username})
+      this.adapter.postUser({'user_name': username}).then(createdUser => {
+        // console.log(createdUser)
+        new Login(createdUser)
+        })
       document.querySelector('#login').innerHTML = ''
       document.querySelector('#category').classList.remove('is-invisible')
       this.createCategory(categories)
@@ -69,6 +72,12 @@ class App {
       // document.querySelector('#clue').classList.remove('is-invisible')
       this.addCategories()
     }
+  }
+
+  createUsers(users) {
+    users.forEach(user => {
+      new Login(user)
+    })
   }
 
   createClues(clues) {

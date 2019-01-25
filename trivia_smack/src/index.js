@@ -2,9 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const app = new App();
 	app.attachEventListeners();
 	// debugger
-	app.adapter.fetchUsers().then(data => console.log(data))
+	app.adapter.fetchUsers().then(data => app.createUsers(data))
 	Promise.all(app.adapter.fetchCategories()).then(data => data.flat()).then(data => data.forEach(category => new Category(category)))
 	// Promise.all(app.adapter.fetchClues()).then(data => data.flat()).then(data => app.createClues(data))
-
-	// app.adapter.fetchClues().then(app.createClues)
 })
