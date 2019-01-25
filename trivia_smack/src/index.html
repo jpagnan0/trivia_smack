@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <script defer="defer" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="lib/adapter.js" charset="utf-8"></script>
+    <script src="lib/signIn.js" charset="utf-8"></script>
     <script src="app.js" charset="utf-8"></script>
     <script src="lib/clue.js" charset="utf-8"></script>
     <script src="lib/category.js" charset="utf-8"></script>
@@ -22,8 +23,34 @@
     </section>
     <section class="section is-paddingless is-marginless">
       <div class="container">
-        <h1 id='title' class="title has-text-centered">Categories</h1>
-        <div class="columns is-multiline" id="category"></div>
+        <h1 id='title' class="title has-text-centered">Sign In</h1>
+
+        <div class="columns is-multiline" id="signIn">
+          <div id='user' class="column is-12-tablet is-8-desktop is-offset-4-desktop is-8-widescreen is-offset-2-widescreen">
+
+            <div class="card" style:"height: 100%;" >
+
+              <div class="card-content">
+                <div class="content">
+
+                    <div class="field is-grouped">
+                      <div class="control is-expanded">
+                        <input data-signIn="signIn" class="input is-large" type="text" placeholder="Username..." value="">
+                      </div>
+
+                      <div class="control">
+                        <button type="submit" data-action="signIn" class="button is-primary is-large"> Log-in </button>
+                      </div>
+                  	</div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="columns is-multiline is-invisible" id="category"></div>
         <div class="columns is-multiline is-invisible" id="clue"></div>
     </section>
 
